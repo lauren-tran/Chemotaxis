@@ -10,7 +10,7 @@
  }   
  void draw()   
  {
-   background(0);
+   background(255);
    for(int i = 0; i < bob.length; i++)
    {
      bob[i].show();
@@ -19,11 +19,14 @@
  }
  class Bacteria
  {
-   int myX, myY;
+   int myX, myY, colorA, colorB, colorC;
    
    Bacteria() //constructor
    {
      myX = myY = 150; 
+     colorA = (int)(Math.random()*256);
+     colorB = (int)(Math.random()*256);
+     colorC = (int)(Math.random()*256);
    }
    void move()
    {
@@ -32,6 +35,7 @@
    }
    void show()
    {
-     ellipse(myX, myY, 10, 10);
+    fill(colorA, colorB, colorC);
+    ellipse(myX, myY, 10, 10);
    }
  } 
